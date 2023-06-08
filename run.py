@@ -8,7 +8,7 @@ from core.data_processor import DataLoader
 from core.model import Model
 from keras.utils import plot_model
 
-#draw the result graphs
+#draw result graphs
 def plot_results(predicted_data, true_data):
     fig = plt.figure(facecolor='white')
     ax = fig.add_subplot(111)
