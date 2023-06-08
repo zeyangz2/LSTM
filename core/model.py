@@ -9,7 +9,7 @@ from keras.models import Sequential, load_model
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 
 class Model():
-	"""LSTM 模型"""
+	"""LSTM model"""
 
 	def __init__(self):
 		self.model = Sequential()

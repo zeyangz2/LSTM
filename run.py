@@ -8,7 +8,6 @@ from core.data_processor import DataLoader
 from core.model import Model
 from keras.utils import plot_model
 
-# 绘图展示结果
 #draw the result graphs
 def plot_results(predicted_data, true_data):
     fig = plt.figure(facecolor='white')
@@ -31,37 +30,33 @@ def plot_results_multiple(predicted_data, true_data, prediction_len):
     #plt.show()
     plt.savefig('results_multiple_try.png')
 
-#RNN时间序列
-#RNN
+#RNN time series
 def main():
-    #读取所需参数
     #get hyperparameters from json
     configs = json.load(open('config_2.json', 'r'))
     if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
-    #读取数据
+
     #get data from csv
     data = DataLoader(
         os.path.join('data', configs['data']['filename']),
         configs['data']['train_test_split'],
         configs['data']['columns']
     )
-    #创建RNN模型
-    #make a RNN model error with showing the model in picture
+
+    #make a RNN model (error with showing the model in picture)
     model = Model()
     mymodel = model.build_model(configs)
     
     # plot_model(mymodel, to_file='model.png',show_shapes=True)
-    
-    #加载训练数据
-    #get normalized data
+
+    #get (Onormalized) data
     x, y = data.get_train_data(
         seq_len=configs['data']['sequence_length'],
         normalise=configs['data']['normalise']
     )
     print (x.shape)
     print (y.shape)
-    
-	#训练模型
+
     #train LSTM model
     model.train(
 		x,
@@ -70,15 +65,14 @@ def main():
 		batch_size = configs['training']['batch_size'],
 		save_dir = configs['model']['save_dir']
 	)
-	
-   #测试结果
+
     #test
     x_test, y_test = data.get_test_data(
         seq_len=configs['data']['sequence_length'],
         normalise=configs['data']['normalise']
     )
     
-    #展示测试效果
+    #show test results
     predictions_multiseq = model.predict_sequences_multiple(x_test, configs['data']['sequence_length'], configs['data']['sequence_length'])
     predictions_pointbypoint = model.predict_point_by_point(x_test,debug=True)
 
