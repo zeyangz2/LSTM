@@ -7,7 +7,7 @@ Feel free to change the hyperparameters in config_1.json. Recommand to directly 
 
 Uncomment the lines in run.py to save your predicted results.
 
-Use this jupyter notebook to get a 3D graph of predicted trajectory.
+Use this jupyter notebook to get a 3D graph of predicted trajectory. You can use the results I got from file: saved test&predict results
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zeyangz2/LSTM/blob/master/3D%20graph%20LSTM%20results.ipynb)
 
 results:
