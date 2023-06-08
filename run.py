@@ -9,6 +9,7 @@ from core.model import Model
 from keras.utils import plot_model
 
 # 绘图展示结果
+#draw the result graphs
 def plot_results(predicted_data, true_data):
     fig = plt.figure(facecolor='white')
     ax = fig.add_subplot(111)
