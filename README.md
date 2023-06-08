@@ -10,6 +10,13 @@ Uncomment the lines in run.py to save your predicted results.
 Use this jupyter notebook to get a 3D graph of predicted trajectory. You can use the results I got from file: saved test&predict results
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zeyangz2/LSTM/blob/master/3D%20graph%20LSTM%20results.ipynb)
 
+Since LSTM is good for point by point prediction but not good for long sequence prediction, we use another model called Informer to do long sequence prediction.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zeyangz2/LSTM/blob/master/Informer_for_stroke_research.ipynb)
+
+To use Informer, you must need to add a date column and put the feaeture that you want to predict to the rightmost column. Right now, Informer gives proper predicted results but still not good enough.
+
+Make sure to edit the sample data in trial2.csv before using Informer to train the network.
+
 results:
 
 ![3D result](https://github.com/zeyangz2/LSTM/assets/73300066/567839c0-16eb-4870-8e89-90343fa5423b)
