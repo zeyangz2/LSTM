@@ -17,7 +17,7 @@ To use Informer, you must need to add a date column and put the feaeture that yo
 
 Make sure to edit the sample data in trial2.csv before using Informer to train the network.
 
-Architecture of LSTM model:
+Architecture of LSTM model (the inputs to the model could change depending on how many inputs we want to use to train the model):
 
 ![model](https://github.com/zeyangz2/LSTM/assets/73300066/801da6f7-11a1-4b94-bb89-f78f34086115)
 
