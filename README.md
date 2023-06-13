@@ -27,17 +27,31 @@ red line for ground truth and green line for our prediction
 
 ![3D result](https://github.com/zeyangz2/LSTM/assets/73300066/567839c0-16eb-4870-8e89-90343fa5423b)
 
-z_axis:
+## **z_axis:**
 
 ![result_z](https://github.com/zeyangz2/LSTM/assets/73300066/e4a386d9-3d7d-46bc-b2ee-57cbad2cc750)
 
-y_axis:
+**z_axis model loss:**
+
+![Model Loss z](https://github.com/zeyangz2/LSTM/assets/73300066/cf8b165b-11d7-4b07-bf97-91d8ae930024)
+
+
+## **y_axis:**
 
 ![results_y](https://github.com/zeyangz2/LSTM/assets/73300066/8902b71a-0f5a-4329-9964-554f8a639a62)
 
-x_axis:
+**y_axis model loss:**
+
+![Model Loss y](https://github.com/zeyangz2/LSTM/assets/73300066/00481fb4-db25-4b21-a9e7-a17d4dc4da6a)
+
+
+## **x_axis:**
 
 ![results_x](https://github.com/zeyangz2/LSTM/assets/73300066/7b59c058-e4d3-4e12-a590-9ef38c316835)
+
+**x_axis model loss:**
+
+![Model Loss x](https://github.com/zeyangz2/LSTM/assets/73300066/ebb09931-97cb-4294-9342-2363734c9429)
 
 more updates later...
 
