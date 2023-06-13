@@ -7,6 +7,7 @@ import numpy as np
 from core.data_processor import DataLoader
 from core.model import Model
 from keras.utils import plot_model
+from tensorflow.keras.models import load_model
 
 #draw result graphs
 def plot_results(predicted_data, true_data):
@@ -77,12 +78,14 @@ def main():
     predictions_pointbypoint = model.predict_point_by_point(x_test,debug=True)
 
     # print(predictions_pointbypoint)
-    np.save('x.npy', predictions_pointbypoint)
+    # np.save('x.npy', predictions_pointbypoint)
     # print(y_test)
     # np.save('z_test.npy', y_test)
     
     plot_results_multiple(predictions_multiseq, y_test, configs['data']['sequence_length'])
     plot_results(predictions_pointbypoint, y_test)
+
+
     
 if __name__ == '__main__':
     main()

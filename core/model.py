@@ -7,6 +7,7 @@ from core.utils import Timer
 from keras.layers import Dense, Activation, Dropout, LSTM
 from keras.models import Sequential, load_model
 from keras.callbacks import EarlyStopping, ModelCheckpoint
+import matplotlib.pyplot as plt
 
 class Model():
 	"""LSTM model"""
@@ -41,6 +42,8 @@ class Model():
 
 		print('[Model] Model Compiled')
 		timer.stop()
+
+		print(self.model.summary())
 		
 		return self.model
 		
@@ -53,20 +56,31 @@ class Model():
 		
 		save_fname = os.path.join(save_dir, '%s-e%s.h5' % (dt.datetime.now().strftime('%d%m%Y-%H%M%S'), str(epochs)))
 		callbacks = [
-			EarlyStopping(monitor='val_loss', patience=2),
+			EarlyStopping(monitor='val_loss', patience=50),
 			ModelCheckpoint(filepath=save_fname, monitor='val_loss', save_best_only=True)
 		]
-		self.model.fit(
+		history = self.model.fit(
 			x,
 			y,
 			epochs=epochs,
 			batch_size=batch_size,
-			callbacks=callbacks
+			callbacks=callbacks,
+			validation_split=0.1
 		)
-		self.model.save(save_fname)
+		# self.model.save(save_fname)
 
 		print('[Model] Training Completed. Model saved as %s' % save_fname)
 		timer.stop()
+
+		# Plotting the loss
+		plt.plot(history.history['loss'])
+		plt.plot(history.history['val_loss'])
+		plt.title('Model loss')
+		plt.ylabel('Loss')
+		plt.xlabel('Epoch')
+		plt.legend(['Train', 'Validation'], loc='upper right')
+		plt.savefig('Model Loss.png')
+
 
 	def train_generator(self, data_gen, epochs, batch_size, steps_per_epoch, save_dir):
 		timer = Timer()
