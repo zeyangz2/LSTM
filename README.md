@@ -1,9 +1,9 @@
-# LSTM
+# LSTM for therapist trajectory prediction
 train LSTM with stroke therapist and patient data
 
-We collected some sample data in file trial2.csv to train the network.
+We collected some sample data in data file to train the network.
 
-Feel free to change the hyperparameters in config_1.json. Recommand to directly use config_2.json.
+Feel free to change the hyperparameters in config_1.json. Recommand to directly use config_2.json, since the hyperparameters are fine-tuned by Zeyang.
 
 Uncomment the lines in run.py to save your predicted results.
 
@@ -17,11 +17,13 @@ To use Informer, you must need to add a date column and put the feaeture that yo
 
 Make sure to edit the sample data in trial2.csv before using Informer to train the network.
 
-Architecture of LSTM model (the number of inputs given to the model could change depending on how many inputs we want to use to train the model):
+## Architecture of new LSTM model 
 
-![model](https://github.com/zeyangz2/LSTM/assets/73300066/801da6f7-11a1-4b94-bb89-f78f34086115)
+(the number of inputs given to the model could change depending on the number of inputs we want to use to train the model):
 
-results:
+![4360afb28290abd2a1b6080a8f3a115](https://github.com/zeyangz2/LSTM/assets/73300066/8af77e54-3ac4-43b2-abb7-656a0de2b296)
+
+# results from trial2.csv:
 
 red line for ground truth and green line for our prediction
 
@@ -52,6 +54,46 @@ red line for ground truth and green line for our prediction
 **x_axis model loss:**
 
 ![Model Loss x](https://github.com/zeyangz2/LSTM/assets/73300066/ebb09931-97cb-4294-9342-2363734c9429)
+
+# results from srikar and zeyang_1.csv:
+
+red line for ground truth and green line for our prediction
+
+![37598975822b4d1736266b1c8c183d3](https://github.com/zeyangz2/LSTM/assets/73300066/7ae01ef7-6ad4-4208-b2d1-8721e824b0e4)
+
+
+## **z_axis:**
+
+![new result z](https://github.com/zeyangz2/LSTM/assets/73300066/4e492782-00c2-4d93-bfaa-0b2202bd572b)
+
+
+**z_axis model loss:**
+
+
+![new Model Loss z](https://github.com/zeyangz2/LSTM/assets/73300066/e3aa0d03-8d37-46f5-8b52-da24600cb54a)
+
+
+## **y_axis:**
+
+![new result y](https://github.com/zeyangz2/LSTM/assets/73300066/910daef8-f1c1-499c-8147-9d51ba8538bd)
+
+
+**y_axis model loss:**
+
+![new Model Loss y](https://github.com/zeyangz2/LSTM/assets/73300066/02ca9279-3683-446d-9068-52a9afe0236f)
+
+
+
+## **x_axis:**
+
+![new result x](https://github.com/zeyangz2/LSTM/assets/73300066/cfc7cfe6-4aaa-4e85-b776-69a0d8b951c4)
+
+
+**x_axis model loss:**
+
+![new Model Loss x](https://github.com/zeyangz2/LSTM/assets/73300066/a5a75cf3-9232-4fc5-bf0b-f632938b5b77)
+
+
 
 more updates later...
 
