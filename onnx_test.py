@@ -17,13 +17,13 @@ def onnx():
 
     dataframe = pd.read_csv(filename)
     data_full = dataframe.get(cols)
-    row = data_full.iloc[1609].values
+    row = data_full.iloc[1613].values
 
     print(row)
 
     # Load the ONNX model
     sess = rt.InferenceSession(
-        r'C:\Users\flash\OneDrive\桌面\LSTM_predict_therapist_trajectory\converted_models\LSTM_trajectory_y.onnx')
+        r'C:\Users\flash\OneDrive\桌面\LSTM_predict_therapist_trajectory\converted_models\cw2_z.onnx')
 
     # Assume input_data is your input in numpy array format
     # Make sure the input data type and shape match the model's expected input

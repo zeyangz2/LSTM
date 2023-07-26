@@ -1,6 +1,6 @@
 {
 	"data": {
-		"filename": "srikar and zeyang_1.csv",
+		"filename": "srikar and zeyang_clockwise 2.csv",
 		"columns": [
 			"Therapist position z",
 			"Patient joint angle 0",
@@ -11,9 +11,7 @@
 			"Patient joint angle 5",
 			"Patient position x",
 			"Patient position y",
-			"Patient position z",
-			" Recovery Factor",
-			" Assistance Level"
+			"Patient position z"
 		],
 		"sequence_length": 2,
 		"train_test_split": 0.85,
@@ -32,7 +30,7 @@
 				"type": "lstm",
 				"neurons": 256,
 				"input_timesteps": 1,
-				"input_dim": 12,
+				"input_dim": 10,
 				"return_seq": true
 			},
 			{

@@ -86,9 +86,9 @@ def main():
     predictions_pointbypoint = model.predict_point_by_point(x_test, debug=True)
 
     # print(predictions_pointbypoint)
-    # np.save('x.npy', predictions_pointbypoint)
-    # print(y_test)
-    # np.save('z_test.npy', y_test)
+    # np.save('new_z_pred.npy', predictions_pointbypoint)
+    # # print(y_test)
+    # np.save('new_z_test.npy', y_test)
 
     plot_results_multiple(predictions_multiseq, y_test, configs['data']['sequence_length'])
     plot_results(predictions_pointbypoint, y_test)
